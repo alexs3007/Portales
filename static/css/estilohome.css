@@ -25,6 +25,8 @@ header{
 	box-shadow: 1px 5px rgba(0,0,0,0.5);
 }
 
+
+
 #izquierda{
 	margin-top: 8px;
 	margin-bottom: 5px;
@@ -147,6 +149,7 @@ h1{
 	font-family: "Freestyle Script","Dosis", "Tahoma";
 	font-size: 40px;
 	margin-bottom: 0;
+	margin-top: 0 auto;
 }
 
 
@@ -184,7 +187,7 @@ h2{
 #video{
 	margin-top: 20px; 
 	display: inline-block;
-	width: 60%;
+	width: 57%;
 	border:none;
 }
 
@@ -192,12 +195,22 @@ h2{
 #otro{
 	margin-top: 20px; 
 	display: inline-block;
-	width: 38%;
+	width: 41%;
+	height: 365px;
 	border:none;
+	border-top: 4px solid #0CA486;
+	border-right: 1px solid #0A8F74;
+	margin-left: 18px;
+	
 }
 
 
 video{
 	width: 100%;
 	border-radius: 7px;
+}
+
+h3{
+	font-family: "Tempus Sans ITC";
+	font-size: 22px;
 }
