@@ -83,7 +83,7 @@ function init(){
 
 	var panoSettings = {
 
-		position: mapCoords,
+		position: {lat:13.3090076,lng:-87.1793544},
 		pov:{
 			heading:0,
 			pitch:0
