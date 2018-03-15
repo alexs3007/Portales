@@ -7,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mina" rel="stylesheet">
 </head>
-<body>
+<body id="home">
 	<div id="contenedor">
 		<header>
 			<article id="izquierda">
@@ -29,9 +29,9 @@
 						<li><a ><strong>|</strong></a></li>
 						<li><a href="orientalzone.html"><strong>ORIENTAL ZONE</strong></a></li>
 						<li><a ><strong>|</strong></a></li>	
-						<li><a href=""><strong>HOTELS</strong></a></li>
+						<li><a href="hotels.html"><strong>HOTELS</strong></a></li>
 						<li><a ><strong>|</strong></a></li>							
-						<li><button id="btn">REGISTER</button></li>
+						<li><a href="#popup" class="popup-link"><strong>REGISTER</strong></a></li>
 					</ul>
 				</nav>
 			</article>
@@ -64,12 +64,24 @@
 		</section>	
 
 		<section id="otro">
-			<h3>Sitios visitados</h3>
-			<img src="static/img/Twitter.png" alt="">
-		</section>		
+			<div class="dentro">
+				<h3>Sitios visitados</h3>
+				<p id="lugares"></p></li>
+			</div>
+		</section>	
+
+		<div class="modal-wrapper" id="popup">
+  			 <div class="popup-contenedor">
+		      <h2>NUEVO REGISTRO</h2>
+		      <a href="login.html"><input type="submit" name="" value="Sign In"></a>
+		      <a href="register.html"><input type="submit" name="" value="Sign Up"></a>
+		      <a class="popup-cerrar" href="#">X</a>
+   			</div>
+		</div>	
 		
 	</div>
 	<script src="static/js/jquery.js"></script>
 	<script src="static/js/menu.js"></script>
+	<script src="static/js/register.js"></script>
 </body>
 </html>
