@@ -34,7 +34,7 @@
 						<li><a ><strong>|</strong></a></li>	
 						<li><a href="hotels.html"><strong>HOTELS</strong></a></li>
 						<li><a ><strong>|</strong></a></li>							
-						<li><button id="btn">REGISTER</button></li>
+						<li><a href="#popup" class="popup-link"><strong>REGISTER</strong></a></li>
 					</ul>
 				</nav>
 			</article>
@@ -92,7 +92,14 @@
 		<div id="map" class="col"></div>
 		<div id="pan" class="col"></div>
 			
-
+	<div class="modal-wrapper" id="popup">
+  		<div class="popup-contenedor">
+		    <h2>NUEVO REGISTRO</h2>
+		    <a href="login.html"><input type="submit" name="" value="Sign In"></a>
+		    <a href="register.html"><input type="submit" name="" value="Sign Up"></a>
+		    <a class="popup-cerrar" href="#">X</a>
+   		</div>
+	</div>	
 	<script src="static/js/jquery.js"></script><!--jquery siempre arriba-->
 	<script src="static/js/occidentalzone.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMk23sUF7guNp7I9m0ij3VVozhs6OKWXU&callback=init"
