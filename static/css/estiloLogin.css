@@ -1,0 +1,202 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	font-family: sans-serif;
+}
+.loginBox
+{
+
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 420px;
+	padding: 80px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.7);
+}
+.user
+{
+	width: 350px;
+	height: 350px;
+	border-radius: 70%;
+	overflow: hidden;
+	position: absolute;
+	margin-top: -170px;
+	margin-left: -450px;
+}
+h2
+{
+	margin-top: -40px;
+	padding: 0 0 20px;
+	color: #efed40;
+	text-align: center;
+}
+.loginBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+}
+.loginBox input
+{	
+	width: 100%;
+	margin-bottom: 30px;
+}
+.loginBox input[type="text"]
+{
+	
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.loginBox input[type="submit"]
+{
+	margin-top: 20px;
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background: #ff267e;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.loginBox input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+.loginBox a
+{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.barraF{
+	margin:0 auto;
+	width: 99.98%;
+	height: 40px;
+	background: rgba(0,0,0,.5);
+	vertical-align: top;
+	box-sizing: border-box;
+}
+
+.barraF p{
+	vertical-align: middle;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+.h{
+	padding-top: 5px;
+	box-sizing: border-box;
+	margin-top: -5px;
+	margin-left: 10px;
+	font-family: "Freestyle Script";
+	color: #FFF;
+	font-size: 20pt;
+}
+
+.h2{
+	margin-top: -10px;
+	margin-left: 10px;
+	font-family: "Dosis";
+	font-size: 14pt;
+	color: #FFF;
+	box-sizing: border-box;
+
+}
+.imag{
+	width: 30px;
+	height: 30px;
+	box-sizing: border-box;
+	margin-left: 10px;
+}
+.imagenes{
+	margin-top: 5px;
+	display: inline-block;
+	margin-left: 850px;
+	display: inline-block;
+	box-sizing: border-box;
+
+}
+
+/*REGISTER*/
+.registerBox
+{
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 450px;
+	padding: 80px 30px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.7);
+}
+.registerBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+}
+.registerBox input
+{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.registerBox input[type="text"],
+.registerBox input[type="email"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.registerBox input[type="submit"]
+{
+	margin-top: 10px;
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background: #ff267e;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.registerBox input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+.registerBox a
+{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+}

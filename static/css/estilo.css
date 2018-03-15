@@ -1,0 +1,235 @@
+/*Copiar*/
+#btn{
+	color:#615B5B;
+	background: none;
+  	border: 0;
+    color: inherit;
+  /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-family: "Dosis";
+    font-size: 93%;
+    text-decoration: none;
+	transition: 0.5s ease;
+	text-align: center;
+}
+
+#contenedor{
+	width: 1250px;
+	margin:0 auto;
+	text-align:center;
+/*	border: 1px solid black;*/
+}
+
+header{
+	box-shadow: 1px 5px rgba(0,0,0,0.5);
+}
+
+#izquierda{
+	margin-top: 8px;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	vertical-align: top;
+	width: 13%;
+	text-align: left;
+	display: inline-block;
+	border-right:  1px solid #999;
+/*	border: 1px solid black;*/
+}
+
+#derecha{
+	margin-top: 8px;
+	padding-top: 10px;
+	margin-bottom: 5px;
+	width: 85%;
+	vertical-align: top;
+	display: inline-block;
+	/*border: 1px solid black;*/
+}
+
+
+#logo{
+	width: 100%;	
+}
+
+.header{
+	margin:0 auto;
+	vertical-align: center;
+	display: inline-block;
+	border: 1px solid black;
+}
+
+#barra{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: left;
+	vertical-align: top;
+}
+
+#barra li{
+	display: inline-block;
+}
+
+
+#buscar{
+	width: 18px;
+	margin-right: 12px;
+}
+
+#barra li a{
+	color:#615B5B;
+	display: block;
+	font-family: "Dosis";
+	font-size: 93%;
+	padding: 20px 0;
+	margin:5px;
+	text-decoration: none;
+	transition: 0.5s ease;
+	width: 100%;
+	text-align: center;
+}
+
+#barra li a:hover{
+	color:#F70C0C;
+	font-style: bold;
+	font-size: 97%;
+}
+
+#btn:hover{
+	color:#F70C0C;
+	font-style: bold;
+	font-size: 97%;
+} 
+#barra li a.active{
+	color:#0A971E;
+	font-style: bold;
+	font-size: 97%;
+}
+
+
+section{
+	margin:0 auto;
+	border: 1px solid black;
+	padding: 0;
+	background-image: url(static/img/head.gif);
+	vertical-align: top;
+}
+
+#contacto{
+	display: inline-block;
+	width: 2%;
+	margin-left: 2px;
+	margin-top: 20px;
+	text-align: right;
+	vertical-align: top;
+}
+
+#contacto a img{
+	display: block;
+	width: 100%;
+} 
+
+hgroup{
+	text-align: left;
+	padding-left: 25px;
+	color:#05116B;	
+	background: #DEDADA;
+	width:22%;
+	margin-bottom: 26px;
+	border-radius: 3px;
+	border-left: 10px solid #05116B;
+
+}
+
+.texto{
+	font-family:"Dosis", "Tahoma";
+	font-size: 30px;
+}
+
+h2{
+	font-family: "Dosis";
+	font-size: 20px;
+}
+
+
+.icon{
+	width: 130%;
+	display: inline-block;
+	margin: 2px;
+	border-radius: 4px;
+}
+
+.icon:hover{
+	cursor: pointer;
+	transition: 0.5s ease;
+	transform: scale(1.2);
+	z-index: 1;
+	position: relative;
+	
+}
+.encabezado{
+	width: 100%;
+}
+
+#images{
+	margin-top: 20px; 
+	display: inline-block;
+	width: 96%;
+	margin-right: 6px;
+	vertical-align: center;
+	padding: 3px; 
+}
+
+/*Copiar*/
+
+
+ .mostrar{
+	height: 140px;
+	/*border: none;*/
+	border-radius: 8px;
+	box-shadow: 6px 6px 15px rgba(0,0,0,0.5); 
+}
+
+#images{
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.largo{
+	width: 17%;
+	display: inline-block;
+	margin-left: -10px;
+	border: none;
+
+}
+
+.largo h1{
+	font-size: 1.2rem;
+}
+
+.mostrar:hover{
+	
+	cursor: pointer;
+	transform: scale(1.5);/*que la imagen se agrande cuando se pase el mouse sobre ellas*/
+	transition: 1s ease;
+	position: relative;/*que la imagen sea una sobre otra*/
+	z-index: 1;/*que la imagen sea una sobre otra*/
+}
+
+.col{
+
+	border: 1px solid black;
+	display: inline-block;
+	height: 350px;
+	margin-top: 20px;
+	width: 49%;
+	border: 1px solid black;
+}
+
+
