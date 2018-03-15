@@ -43,7 +43,7 @@
 				function(transaction, results){successCallback(results);}, errCallback);
 			});
 	}; 
-
+ 
 	var Ciudad=function(names,successCallback){
 		db.transaction(function(transaction){
 			transaction.executeSql(("SELECT * FROM CiudadesV where Name=?"),[names],
@@ -62,11 +62,34 @@ function nuevo(url)
 { 
 	window.location = (url); 
 } 
-var list = function(result){
-		console.dir(result);
+var list = function(results){
+		console.dir(results);
 }
 
-var validar = function(result){
+var i = 0;
+
+var actualizarLugares = function(results){
+		console.dir(results);
+		if (results.rows.length==0){
+			alert("No hay Sitios pendientes");
+		} else {
+			$.each(results.rows, function(rowIndex){
+				var row = results.rows.item(rowIndex);
+				i++;
+
+				var article = `
+				<ul>
+					<li><p id="lugares">${row.Name}</p></li>
+				</ul>
+				`;
+				$('#lugares').prepend( $(article).hide().fadeIn(1500));
+			});
+		}
+	};
+
+listadoUser(actualizarLugares);
+
+var validar = function(results){
 		if(result.rows.length != 0){
 			var url="home.html";
 			onClick=nuevo(url);
