@@ -7,6 +7,12 @@
 	var db = openDatabase('dbSnoopinHN', '1.0', 'This is a client side database',2 * 1024 * 1024);
 
 	db.transaction( function(transaction) {
+		transaction.executeSql("CREATE TABLE IF NOT EXISTS CiudadesV (" +
+			"Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+			"Name TEXT NOT NULL);");
+	});
+
+	db.transaction( function(transaction) {
 		transaction.executeSql("CREATE TABLE IF NOT EXISTS User (" +
 			"Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
 			"Name TEXT NOT NULL, LastName TEXT NOT NULL, Email TEXT NOT NULL);");
@@ -18,11 +24,30 @@
 			[name, lastName, email], function(transaction, results){successCallback(results);}, errCallback);
 		});
 	};
+	var guardarCiudadesV = function(name,successCallback){
+		db.transaction(function(transaction){
+			transaction.executeSql(("INSERT INTO CiudadesV (Name) VALUES (?);"), 
+			[name], function(transaction, results){successCallback(results);}, errCallback);
+		});
+	};
 
 	function listadoUser(successCallback){
 		db.transaction(function(transaction){
 			transaction.executeSql(("SELECT * FROM User"),[],
 				function(transaction, results){successCallback(results);}, errCallback);
+			});
+	};
+	function listadoCiudades(successCallback){
+		db.transaction(function(transaction){
+			transaction.executeSql(("SELECT * FROM CiudadesV"),[],
+				function(transaction, results){successCallback(results);}, errCallback);
+			});
+	}; 
+
+	var Ciudad=function(names,successCallback){
+		db.transaction(function(transaction){
+			transaction.executeSql(("SELECT * FROM CiudadesV where Name=?"),[names],
+				function(transaction, result){successCallback(result);}, errCallback);
 			});
 	};
 
@@ -32,8 +57,6 @@
 				function(transaction, result){successCallback(result);}, errCallback);
 			});
 	};
-
-var nombre=null;
 
 function nuevo(url) 
 { 
@@ -82,8 +105,3 @@ $('#IS').on('click', function(){
 		val(names, emails,validar);	
 	}
 });	
-
-var getname=function(){
-		var name=`<div id="user"><p>${nombre}</p></div>`;
-		$('#user').prepend($(name).hide().fadeIn(1500) );
-	}	
