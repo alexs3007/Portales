@@ -33,19 +33,42 @@
 						<li><a ><strong>|</strong></a></li>	
 						<li><a class="active"><strong>HOTELS</strong></a></li>
 						<li><a ><strong>|</strong></a></li>							
-						<li><a href=""><strong>REGISTER</strong></a></li>
+						<li><a href="#popup" class="popup-link"><strong>REGISTER</strong></a></li>	
 					</ul>
 				</nav>
 			</article>
 		</header>
 
 		<article id="images">
-			<img src="static/img/Facebook.png" alt="">
-			<img src="" alt="">
-			<img src="" alt="">
-			<img src="" alt="">
-			<img src="" alt="">
-			<img src="" alt="">
+			<section class="largo">
+				<img src="static/img/hoteles/ZonaSur/jicaral.jpg" alt="" class="mostrar">
+				<h1 class="texto">Hotel Jicaral</h1>
+			</section>
+
+			<section class="largo">
+				<img src="static/img/hoteles/ZonaNorte/GranHotelSula.jpg" alt="" class="mostrar">
+				<h1 class="texto">Gran Hotel Sula</h1>
+			</section>
+
+			<section class="largo">
+				<img src="static/img/hoteles/ZonaCentral/HotelHondurasMaya.jpg" alt="" class="mostrar">
+				<h1 class="texto">Hotel Honduras Maya</h1>
+			</section class="largo">
+
+			<section class="largo">
+				<img src="static/img/hoteles/ZonaOccidental/HotelMarbella.jpg" alt="" class="mostrar">
+				<h1 class="texto">Hotel Marbella</h1>
+			</section>
+
+			<section class="largo">
+				<img src="static/img/hoteles/ZonaOriental/HotelPlazaMaria.jpg" alt="" class="mostrar">
+				<h1 class="texto">Hotel Plaza Maria</h1>
+			</section>
+
+			<section class="largo">
+				<img src="static/img/hoteles/ZonaSur/BoutiqueCasaD´Luna.jpg"" alt="" class="mostrar">
+				<h1 class="texto">Boutique Casa D'Luna</h1>
+			</section>
 		</article>	
 
 		<article id="contacto">
@@ -60,7 +83,24 @@
 				<img class="icon" src="static/img/Google.png" alt="Google">
 			</a>
 			
-		</article>			
+		</article>	
+
+		<div id="map" class="col"></div>
+		<div id="pan" class="col"></div>
+
+		<div class="modal-wrapper" id="popup">
+  			<div class="popup-contenedor">
+		    <h2>NUEVO REGISTRO</h2>
+		    <a href="login.html"><input type="submit" name="" value="Sign In"></a>
+		    <a href="register.html"><input type="submit" name="" value="Sign Up"></a>
+		    <a class="popup-cerrar" href="#">X</a>
+   			</div>
+		</div>		
+	
+		<script src="static/js/jquery.js"></script><!--jquery siempre arriba-->
+		<script src="static/js/hoteles.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMk23sUF7guNp7I9m0ij3VVozhs6OKWXU&callback=init"
+	    async defer></script>
 
 	</div>
 </body>

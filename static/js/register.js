@@ -44,7 +44,7 @@
 			});
 	}; 
  
-	var Ciudad=function(names,successCallback){
+	var CiudadDb=function(names,successCallback){
 		db.transaction(function(transaction){
 			transaction.executeSql(("SELECT * FROM CiudadesV where Name=?"),[names],
 				function(transaction, result){successCallback(result);}, errCallback);
@@ -86,11 +86,10 @@ var actualizarLugares = function(results){
 			});
 		}
 	};
-
-listadoUser(actualizarLugares);
+listadoCiudades(actualizarLugares);
 
 var validar = function(results){
-		if(result.rows.length != 0){
+		if(results.rows.length != 0){
 			var url="home.html";
 			onClick=nuevo(url);
 			alert("WELCOME "+names);
@@ -99,6 +98,13 @@ var validar = function(results){
 		}
 }
 	
+var existente= function(results){
+	if(results.rows.length==0){
+		var texto=$('#busqueda').val();
+		guardarCiudadesV(texto,function(){
+		});
+	}
+}	
 listadoUser(list);
 
 $('#RE').on('click', function(){
@@ -128,3 +134,15 @@ $('#IS').on('click', function(){
 		val(names, emails,validar);	
 	}
 });	
+
+$('#busqueda').on('keypress', function(e){
+	var tecla= e.which || e.keyCode;
+	var texto=$(this).val();
+
+	if(tecla==13){
+		CiudadDb(texto,existente);
+	}
+});
+
+
+ 
