@@ -1,7 +1,7 @@
 var map = null;
 var panorama = null;
-var lat = 13.9984833;
-var lon = -87.93348029999999;
+var lat = 14.6435997;
+var lon = -88.9946472;
 
 
 function init(){
@@ -11,7 +11,7 @@ function init(){
 	mapSettings = {
 		center: mapCoords,
 		mapTypeId:'roadmap',
-		zoom: 7.3
+		zoom: 9
 	};
 
 	map = new google.maps.Map(document.getElementById('map'),mapSettings);
@@ -90,16 +90,11 @@ function init(){
 	});
 
 
-
-
-
-
-
 // Parque nacional Celaque
 
 	markerSettingsPC = {
 		map: map,
-		position: {lat:13.3102366,lng:-87.18529},
+		position: {lat:14.5920016,lng:-88.8050828},
 		title:'Parque nacional Celaque'
 	};
 
@@ -118,9 +113,6 @@ function init(){
 	markerPC.addListener('click',function(){
 		infowindowPC.open(map,markerPC);
 	});
-
-
-
 
 
 	// Copan Ruinas
@@ -150,9 +142,6 @@ function init(){
 	markerCR.addListener('click',function(){
 		infowindowCR.open(map,markerCR);
 	});
-
-
-
 
 	var panoSettings = {
 

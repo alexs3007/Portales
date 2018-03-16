@@ -4,8 +4,8 @@
 
 var map = null;
 var panorama = null;
-var lat =  13.3002800;
-var lon =  -87.1908300;
+var lat =  13.380446;
+var lon =  -87.3017131;
 
 // var lat1 = 13.2916538;
 // var lon1 =-87.65194729999996;

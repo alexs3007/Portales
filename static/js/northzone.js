@@ -362,3 +362,4 @@ function init(){
         infowindow16.open(map, marker16);
     });
 }
+
