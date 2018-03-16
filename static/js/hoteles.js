@@ -1,7 +1,7 @@
 var map = null;
 var panorama = null;
-var lat = 15.7732601;
-var lon = -87.46535019999999;
+var lat = 15.0000000;
+var lon = -86.5000000;
 
 function init(){
 
@@ -10,7 +10,7 @@ function init(){
 	mapSettings = {
 		center: mapCoords,
 		mapTypeId:'roadmap',
-		zoom:7
+		zoom:6.9
 	};
 
 	map = new google.maps.Map(document.getElementById('map'),mapSettings);
@@ -29,335 +29,536 @@ function init(){
 	map.setStreetView(panorama);
 
 	
-	//
+	// zona sur-------------------------------------------------------------------------------------------
 
-	var markerSettings={
+	// jicaral
+
+	var markerSettingsJ={
 		map:map,
-		position: {lat:14.8718397,lng:-87.9792142 },
-		title: 'Lago de Yojoa, Honduras'
+		position: {lat:13.2921187,lng:-87.1779386 },
+		title: 'El jicaral'
 	};
 
-	var marker=new google.maps.Marker(markerSettings)
+	var markerJ=new google.maps.Marker(markerSettingsJ)
 
-	var infowindow = new google.maps.InfoWindow({
-        content: `El Lago de Yojoa <br />
-        El Lago de Yojoa es un lago de Honduras, Centroamérica, tiene una longitud de 16 km
-         y un ancho de 6 km, se encuentra localizado entre los departamentos de Comayagua, 
-        Cortés y Santa Bárbara. El Lago de Yojoa se encuentra a unos 
-        184 kilómetros de Tegucigalpa, la capital de Honduras.`
+	var infowindowJ = new google.maps.InfoWindow({
+        content: `Choluteca,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map, marker);
+    markerJ.addListener('click', function() {
+        infowindowJ.open(map, markerJ);
     });
-	//
-
-	var markerSettings1={
-		map:map,
-		position: {lat:15.0243254,lng:-88.00095529999999},
-		title: 'Cataratas de Pulhapanzak, Honduras'
-	};
 	
-	var marker1=new google.maps.Marker(markerSettings1);
+	// Villa colonial
 
-	var infowindow1 = new google.maps.InfoWindow({
-        content: `Cataratas de Pulhapanzak <br />
-        Situada al Norte del Lago de Yojoa, es considerada una de las más bellas 
-        cascadas de Centro América por sus aguas cristalinas y una catarata de 43 m de altura.
-        En Pulhapanzak se han descubierto, además, vestigios arqueológicos de lo que podría 
-        haber sido el centro de una antigua cultura, anterior a los Mayas.`
+	var markerSettingsV={
+		map:map,
+		position: {lat:13.3076185,lng:-87.1862625 },
+		title: 'Villa colonial'
+	};
+
+	var markerV=new google.maps.Marker(markerSettingsV)
+
+	var infowindowV = new google.maps.InfoWindow({
+        content: `Choluteca,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker1, 'click', function() {
-        infowindow1.open(map, marker1);
+    markerV.addListener('click', function() {
+        infowindowJ.open(map, markerV);
     });
-	//
 
-	var markerSettings2={
+
+    // Posada San Lázaro
+
+	var markerSettingsS={
 		map:map,
-		position: {lat:15.9721198,lng:-86.47564399999999},
-		title: 'Cayos Cochinos, Honduras'
+		position: {lat:13.3706326,lng:-86.8637607 },
+		title: 'Posada San Lázaro'
 	};
-	
-	var marker2=new google.maps.Marker(markerSettings2);
 
-	var infowindow2 = new google.maps.InfoWindow({
-        content: `Cayos Cochinos <br />
-        Las islas son un área marina protegida y son administradas por la Fundación Hondureña
-        para los Arrecifes de Coral. El arrecife de coral en este caso es parte del 
-        segundo arrecife de coral más grande del mundo, conocido como el Barrera de Coral mesoamericana. 
-        Hay una estación de investigación científica en Cayo Menor, la menor de las dos islas principales 
-        en el sistema.`
+	var markerS=new google.maps.Marker(markerSettingsS)
+
+	var infowindowS = new google.maps.InfoWindow({
+        content: `San Francisco,Choluteca,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker2, 'click', function() {
-        infowindow2.open(map, marker2);
+    markerS.addListener('click', function() {
+        infowindowS.open(map, markerS);
     });
 
 
-	//
+    // Los Manglares
 
-	var markerSettings5={
+	var markerSettingsM={
 		map:map,
-		position: {lat:16.3297608,lng:-86.52996730000001},
-		title: 'Roatán, Honduras'
+		position: {lat:13.413337,lng:-87.44359729999996 },
+		title: 'Los Manglares'
 	};
-	
-	var marker5=new google.maps.Marker(markerSettings5);
 
-	var infowindow5 = new google.maps.InfoWindow({
-        content: `Roatán <br />
-        En general las Islas de la Bahía se refieren al archipiélago comprendido por las islas de Roatán,
-        Útila, Guanaja, y numerosos islotes y cayos, que estaban habitadas en principio por los mayas,
-        después por los payas, en el siglo XVI llegaron los conquistadores españoles quienes trajeron 
-        esclavos africanos como parte de la tripulación.`
+	var markerM=new google.maps.Marker(markerSettingsM)
+
+	var infowindowM = new google.maps.InfoWindow({
+        content: `San Lorenzo,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker5, 'click', function() {
-        infowindow5.open(map, marker5);
+    markerM.addListener('click', function() {
+        infowindowM.open(map, markerM);
     });
 
 
-	//
+       // Hotel Villa Concha-Mar
 
-	var markerSettings6={
+	var markerSettingsC={
 		map:map,
-		position: {lat:14.9817467,lng:-87.88933829999996},
-		title: 'Joya Grande, Honduras'
+		position: {lat:13.4173679,lng:-87.44807930000002 },
+		title: 'Hotel Villa Concha-Mar'
 	};
-	
-	var marker6=new google.maps.Marker(markerSettings6);
 
-	var infowindow6 = new google.maps.InfoWindow({
-        content: `Joya Grande <br />
-        Ubicada en Santa Cruz de Yojoa, en el departamento de Cortés, 
-        a hora y media de San Pedro Sula, una de las principales ciudades de Honduras.
-        El zoológico Joya Grande es un parque que nos propicia una zona para practicar deportes 
-        extremos. Como su nombre lo dice es una Joya que se ha convertido en un polo único en el 
-        desarrollo turístico de Honduras. `
+	var markerC=new google.maps.Marker(markerSettingsC)
+
+	var infowindowC = new google.maps.InfoWindow({
+        content: `San Lorenzo,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker6, 'click', function() {
-        infowindow6.open(map, marker6);
+    markerC.addListener('click', function() {
+        infowindowC.open(map, markerC);
     });
 
-	
-	//
 
-	var markerSettings7={
+
+    // Zona Central-----------------------------------------------------------------------------------------
+
+
+    // LQ Hotel Tegucigalpa
+
+	var markerSettingsLQ={
 		map:map,
-		position: {lat:	14.9817467,lng:-87.88933829999996},
-		title: 'La Ceiba, Honduras'
+		position: {lat:14.0759244,lng:-87.1993966 },
+		title: 'LQ Hotel Tegucigalpa'
 	};
-	
-	var marker7=new google.maps.Marker(markerSettings7);
 
-	var infowindow7 = new google.maps.InfoWindow({
-        content: `La Ceiba <br />
-        Es considerada el centro del corredor biológico Caribe Hondureño siendo un destino
-        turístico que tienes que visitar porque te ofrece múltiples actividades turísticas 
-        de aventura, naturaleza, experiencias educativas, turismo rural, comunitario y cultural 
-        en la que se destaca la cultura garífuna con su riqueza gastronómica, ya sea en la ciudad, 
-        en áreas protegidas y/o comunidades.`
+	var markerLQ=new google.maps.Marker(markerSettingsLQ)
+
+	var infowindowLQ = new google.maps.InfoWindow({
+        content: `Tegucigalpa,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker7, 'click', function() {
-        infowindow7.open(map, marker7);
+    markerLQ.addListener('click', function() {
+        infowindowLQ.open(map, markerLQ);
     });
 
 
-	//
+    // Hyatt Place Tegucigalpa
 
-	var markerSettings8={
+	var markerSettingsHP={
 		map:map,
-		position: {lat:	15.734328,lng:	-87.45616899999999},
-		title: 'Jardín Botánico Lancetilla, Honduras'
+		position: {lat:14.102259,lng:-87.18702389999999 },
+		title: 'Hyatt Place Tegucigalpa'
 	};
-	
-	var marker8=new google.maps.Marker(markerSettings8);
 
-	var infowindow8 = new google.maps.InfoWindow({
-        content: `Jardín Botánico Lancetilla <br />
-   		Tiene una extensión de 1681 hectáreas, de las cuales 1261 ha son de una reserva de Naturaleza, 
-   		350 son de plantaciones y 70 ha corresponden a un Arboretum. La colección comprende unas 1500 
-   		especies enfocadas sobre todo en las plantas tropicales con frutos. El Jardín Botánico depende 
-   		como Departamento, de la Escuela nacional de ciencias forestales (ESNACIFOR).`
+	var markerHP=new google.maps.Marker(markerSettingsHP)
+
+	var infowindowHP = new google.maps.InfoWindow({
+        content: `Tegucigalpa,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker8, 'click', function() {
-        infowindow8.open(map, marker8);
+    markerHP.addListener('click', function() {
+        infowindowHP.open(map, markerHP);
     });
 
-	//
 
-	var markerSettings9={
+    // Holiday Inn Express Tegucigalpa
+
+	var markerSettingsHI={
 		map:map,
-		position: {lat:	15.7732601,lng:-87.46535019999999},
-		title: 'Tela, Honduras'
+		position: {lat:14.0867308,lng:-87.18789459999999 },
+		title: 'Holiday Inn Express Tegucigalpa'
 	};
-	
-	var marker9=new google.maps.Marker(markerSettings9);
 
+	var markerHI=new google.maps.Marker(markerSettingsHI)
 
-	var infowindow9 = new google.maps.InfoWindow({
-        content: `Tela <br />
-   		Tela posee complejos turísticos, con playas de arena blanca natural. 
-   		También tiene otros lugares cercanos que se pueden visitar, como Tornabe, 
-   		San Juan y Triunfo de la Cruz, que son comunidades garifunas. Además cuenta
-   		con el jardín botánico de Lacentilla, que conserva plantas originiales de todas
-   		partes del mundo.`
+	var infowindowHI = new google.maps.InfoWindow({
+        content: `Tegucigalpa,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker9, 'click', function() {
-        infowindow9.open(map, marker9);
+    markerHI.addListener('click', function() {
+        infowindowHI.open(map, markerHI);
     });
 
-	//
 
-	var markerSettings10={
+
+    // Hotel Comayagua Inn
+
+	var markerSettingsCI={
 		map:map,
-		position: {lat:	16.4826614,lng:-85.87932519999998},
-		title: 'Guanaja, Honduras'
+		position: {lat:14.460197,lng:-87.64295849999996 },
+		title: 'Hotel Comayagua Inn'
 	};
-	
-	var marker10=new google.maps.Marker(markerSettings10);
 
-	var infowindow10 = new google.maps.InfoWindow({
-        content: `Guanaja <br />
-   		Guanaja, está localizada aproximadamente a 70 kilómetros al norte de la costa de Honduras, 
-   		y a 12 kilómetros de la isla de Roatán. Uno de los cayos de Guanaja también es llamado
-   		Guanaja o Bonacca, o simplemente "El Cayo". `
+	var markerCI=new google.maps.Marker(markerSettingsCI)
+
+	var infowindowCI = new google.maps.InfoWindow({
+        content: `Comayagua,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker10, 'click', function() {
-        infowindow10.open(map, marker10);
+    markerCI.addListener('click', function() {
+        infowindowCI.open(map, markerCI);
     });
 
-	//
 
-	var markerSettings11={
+    // Hotel Antigua Comayagua
+
+	var markerSettingsAC={
 		map:map,
-		position: {lat:	15.84,lng:-87.67899999999997},
-		title: 'Parque Nacional Jeanette Kawas, Tela, Honduras'
+		position: {lat:14.4610489,lng:-87.64246579999997 },
+		title: 'Hotel Antigua Comayagua'
 	};
-	
-	var marker11=new google.maps.Marker(markerSettings11);
 
-	var infowindow11 = new google.maps.InfoWindow({
-        content: `Parque Nacional Jeanette Kawas <br />
-   		Es un parque nacional creado el 1 de enero de 1988 en honor a Blanca Jeanette Kawas 
-   		y ubicado al oeste de la ciudad de Tela y por la costa caribeña en el norte del
-   		departamento de Atlántida, Honduras. Abarca una superficie de 781,62 km² y en su punto
-   		más alto tiene una altitud de 900 metros. `
+	var markerAC=new google.maps.Marker(markerSettingsAC)
+
+	var infowindowAC = new google.maps.InfoWindow({
+        content: `Comayagua,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker11, 'click', function() {
-        infowindow11.open(map, marker11);
+    markerAC.addListener('click', function() {
+        infowindowAC.open(map, markerAC);
     });
 
-	//
 
-	var markerSettings12={
+
+
+    // zona Norte--------------------------------------------------------------------------------------
+
+
+	// Hotel La Quinta
+
+	var markerSettingsHLQ={
 		map:map,
-		position: {lat:	15.8246967,lng:-87.35129130000001},
-		title: 'Parque Nacional Punta Izopo, Honduras'
+		position: {lat:15.7728996,lng:-86.78630659999999 },
+		title: 'Hotel La Quinta'
 	};
-	
-	var marker12=new google.maps.Marker(markerSettings12);
 
-	var infowindow12 = new google.maps.InfoWindow({
-        content: `Parque Nacional Punta Izopo<br />
-   		El Parque nacional Punta Izopo es un área protegida con el estatus de parque nacional 
-   		en el país centroamericano de Honduras. Se encuentra localizado en el municipio de Tela,
-   		en la costa caribeña del norte del departamento de Atlántida. Tiene una altitud de 118 metros.`
+	var markerHLQ=new google.maps.Marker(markerSettingsHLQ)
+
+	var infowindowHLQ = new google.maps.InfoWindow({
+        content: `La Ceiba,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker12, 'click', function() {
-        infowindow12.open(map, marker12);
-    });
+    markerHLQ.addListener('click', function() {
+        infowindowHLQ.open(map, markerHLQ);
+    });    
 
 
-	//
+   // Apart Hotel Pico Bonito
 
-	var markerSettings13={
+	var markerSettingsAH={
 		map:map,
-		position: {lat:14.9712895,lng:-88.02652569999998},
-		title: 'Peña Blanca, Honduras'
+		position: {lat:15.7492785,lng:-86.84456080000001 },
+		title: 'Apart Hotel Pico Bonito'
 	};
-	
-	var marker13=new google.maps.Marker(markerSettings13);
 
-	var infowindow13 = new google.maps.InfoWindow({
-        content: `Peña Blanca<br />
-   		Peña Blanca es una pequeña ciudad ubicada a 84 Kilómetros de San Pedro Sula, 
-   		Capital Industrial de Honduras. Cuenta con un enorme crecimiento poblacional y económico, 
-   		destacando su comercio nato y su turismo; al encontrarse cerca del Lago de Yojoa es una
-   		ventaja de ubicación geográfica. A pesar de que Santa Cruz de Yojoa, Cabecera Municipal, 
-   		está ubicada a solo 15 Kilómetros; la mayor parte de la economía de este municipio se
-   		centra en esta ciudad.`
+	var markerAH=new google.maps.Marker(markerSettingsAH)
+
+	var infowindowAH = new google.maps.InfoWindow({
+        content: `La Ceiba,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker13, 'click', function() {
-        infowindow13.open(map, marker13);
-    });
+    markerAH.addListener('click', function() {
+        infowindowAH.open(map, markerAH);
+    });    
+ 
 
+    // Gran Hotel Sula
 
-	//
-
-
-	var markerSettings15={
+	var markerSettingsGH={
 		map:map,
-		position: {lat:15.4964731,lng:-88.21165289999999},
-		title: 'Parque Nacional Cusuco, Honduras'
+		position: {lat:15.5059697,lng:-88.0250734 },
+		title: 'Gran Hotel Sula'
 	};
-	
-	var marker15=new google.maps.Marker(markerSettings15);
 
-	var infowindow15 = new google.maps.InfoWindow({
-        content: `Parque Nacional Cusuco<br />
-   		El parque se encuentra en la Sierra del Merendón. En su mayoría se constituye
-   		de bosque nublado entre los 1500 y 2450 metros sobre el nivel del mar. 
-   		La zona tiene una precipitación elevada y una temperatura media de 19 °C. 
-   		También se caracteriza por una neblina y llovizna casi constante.`
+	var markerGH=new google.maps.Marker(markerSettingsGH)
+
+	var infowindowGH = new google.maps.InfoWindow({
+        content: `San Pedro Sula,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker15, 'click', function() {
-        infowindow15.open(map, marker15);
-    });
+    markerGH.addListener('click', function() {
+        infowindowGH.open(map, markerGH);
+    });    
 
-	//
 
-	var markerSettings16={
+
+    // Metrotel Express
+
+	var markerSettingsMH={
 		map:map,
-		position: {lat:15.618948,lng:-86.8621827},
-		title: 'Parque Nacional Pico Bonito, Honduras'
+		position: {lat:15.4903822,lng:-87.98287690000001 },
+		title: 'Metrotel Express'
 	};
-	
-	var marker16=new google.maps.Marker(markerSettings16);
 
-	var infowindow16 = new google.maps.InfoWindow({
-        content: `Parque Nacional Pico Bonito<br />
-   		Pico Bonito es una montaña que se encuentra en el municipio de El Porvenir
-   		y cerca de la ciudad costera de La Ceiba en Honduras. 
-   		Tiene una altura de 2,435 metros. Desde el 1 de enero de 1987 fue establecido 
-   		como un parque natural protegido. Tiene una área de 564.30 kilómetros cuadrados.`
+	var markerMH=new google.maps.Marker(markerSettingsMH)
+
+	var infowindowMH = new google.maps.InfoWindow({
+        content: `San Pedro Sula,Honduras.`
     });
 
   
-    google.maps.event.addListener(marker16, 'click', function() {
-        infowindow16.open(map, marker16);
+    markerMH.addListener('click', function() {
+        infowindowMH.open(map, markerMH);
     });
+
+
+
+     // Hilton Princess
+
+	var markerSettingsHPR={
+		map:map,
+		position: {lat:15.4990365,lng:-88.03798990000001 },
+		title: 'Hilton Princess'
+	};
+
+	var markerHPR=new google.maps.Marker(markerSettingsHPR)
+
+	var infowindowHPR = new google.maps.InfoWindow({
+        content: `San Pedro Sula,Honduras.`
+    });
+
+  
+    markerMH.addListener('click', function() {
+        infowindowHPR.open(map, markerHPR);
+    });
+
+
+    // zona Occidental--------------------------------------------------------------------------------------
+
+    //La Posada de Belssy
+
+	var markerSettingsPSB={
+		map:map,
+		position: {lat:14.8397936,lng:-89.15582890000002 },
+		title: 'La Posada de Belssy'
+	};
+
+	var markerPSB=new google.maps.Marker(markerSettingsPSB)
+
+	var infowindowPSB = new google.maps.InfoWindow({
+        content: `Ruinas de Copán,Honduras.`
+    });
+
+  
+    markerPSB.addListener('click', function() {
+        infowindowPSB.open(map, markerPSB);
+    });
+
+
+    //Hotel Marbella
+
+	var markerSettingsPSM={
+		map:map,
+		position: {lat:14.8397235,lng:-89.15667259999998 },
+		title: 'Hotel Marbella'
+	};
+
+	var markerPSM=new google.maps.Marker(markerSettingsPSM)
+
+	var infowindowPSM = new google.maps.InfoWindow({
+        content: `Ruinas de Copán,Honduras.`
+    });
+
+  
+    markerPSM.addListener('click', function() {
+        infowindowPSM.open(map, markerPSM);
+    });
+
+
+     //Hotel caxa real
+
+	var markerSettingsCR={
+		map:map,
+		position: {lat:14.586277,lng:-88.585916 },
+		title: 'Hotel caxa real'
+	};
+
+	var markerCR=new google.maps.Marker(markerSettingsCR)
+
+	var infowindowCR= new google.maps.InfoWindow({
+        content: `Gracias,Honduras.`
+    });
+
+  
+    markerCR.addListener('click', function() {
+        infowindowCR.open(map, markerCR);
+    });
+
+
+    //Hotel San Sebastian
+
+	var markerSettingsSS={
+		map:map,
+		position: {lat:14.5879114,lng:-88.58323459999997 },
+		title: 'Hotel San Sebastian'
+	};
+
+	var markerSS=new google.maps.Marker(markerSettingsSS)
+
+	var infowindowSS= new google.maps.InfoWindow({
+        content: `Gracias,Honduras.`
+    });
+
+  
+    markerSS.addListener('click', function() {
+        infowindowSS.open(map, markerSS);
+    });
+
+
+    //Hotel Villa Verde
+
+	var markerSettingsVV={
+		map:map,
+		position: {lat:14.5740307,lng:-88.61473560000002 },
+		title: 'Hotel Villa Verde'
+	};
+
+	var markerVV=new google.maps.Marker(markerSettingsVV)
+
+	var infowindowVV= new google.maps.InfoWindow({
+        content: `Gracias,Honduras.`
+    });
+
+  
+    markerVV.addListener('click', function() {
+        infowindowVV.open(map, markerVV);
+    });
+
+
+
+// zona oriental--------------------------------------------------------------------------------------
+
+    //Hotel Biosfera de la Mosquitia
+
+	var markerSettingsBSM={
+		map:map,
+		position: {lat:15.265714311275598,lng:-83.77065282630252 },
+		title: 'Hotel Biosfera de la Mosquitia'
+	};
+
+	var markerBSM=new google.maps.Marker(markerSettingsBSM)
+
+	var infowindowBSM = new google.maps.InfoWindow({
+        content: `Gracias a Dios,Honduras.`
+    });
+
+  
+    markerBSM.addListener('click', function() {
+        infowindowBSM.open(map, markerBSM);
+    });
+
+
+//Yu Baiwan Hotel
+
+	var markerSettingsYU={
+		map:map,
+		position: {lat:15.266945,lng:-83.77084300000001 },
+		title: 'Hotel Yu Baiwan Hotel'
+	};
+
+	var markerYU=new google.maps.Marker(markerSettingsYU)
+
+	var infowindowYU = new google.maps.InfoWindow({
+        content: `Gracias a Dios,Honduras.`
+    });
+
+  
+    markerYU.addListener('click', function() {
+        infowindowYU.open(map, markerYU);
+    });
+
+
+    //Hotel La posada de Sandra
+
+	var markerSettingsPS={
+		map:map,
+		position: {lat:14.5522852,lng:-86.66979879999997 },
+		title: 'Hotel La posada de Sandra'
+	};
+
+	var markerPS=new google.maps.Marker(markerSettingsPS)
+
+	var infowindowPS = new google.maps.InfoWindow({
+        content: `Juticalpa,Honduras.`
+    });
+
+  
+    markerPS.addListener('click', function() {
+        infowindowPS.open(map, markerPS);
+    });
+
+     //Hotel Posada del centro
+
+	var markerSettingsPSC={
+		map:map,
+		position: {lat:14.6572108,lng:-86.21076719999996 },
+		title: 'Hotel Posada del centro'
+	};
+
+	var markerPSC=new google.maps.Marker(markerSettingsPSC)
+
+	var infowindowPSC = new google.maps.InfoWindow({
+        content: `Juticalpa,Honduras.`
+    });
+
+  
+    markerPSC.addListener('click', function() {
+        infowindowPSC.open(map, markerPSC);
+    });
+
+
+     //Hostal vista del mar
+
+	var markerSettingsVM={
+		map:map,
+		position: {lat:15.912934,lng:-85.95044000000001 },
+		title: 'Hostal Vista Del Mar'
+	};
+
+	var markerVM=new google.maps.Marker(markerSettingsVM)
+
+	var infowindowVM = new google.maps.InfoWindow({
+        content: `Trujillo,Honduras.`
+    });
+
+  
+    markerVM.addListener('click', function() {
+        infowindowVM.open(map, markerVM);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
