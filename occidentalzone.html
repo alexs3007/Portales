@@ -88,7 +88,31 @@
 			</a>
 			
 		</article>	
-	</div>			
+	</div>		
+	<div class="controles">
+			<p id="ca">Desde:</p>
+			<input id="desde" type="text" >
+			<p id="caj">Hasta:</p>
+			<input id="hasta" type="text" >
+			<button id="btnT">Trazar Ruta desde Origen</button>
+			<p id="c">Tipo Mapa</p>
+			<select id="TipoMapa">
+				<option value="roadmap"> Mapa de Ruta</option>
+				<option value="satellite">Satelite </option>
+				<option value="hybrid">Hibrido</option>
+				<option value="terrain">Terreno</option>
+			</select>
+
+			<div class="CR">
+				Tipo de Ruta:
+				<input  checked="true" type="radio" id="rdb1" name="TR" value="DRIVING" class="radio">AUTOMOVIL 
+				<input type="radio" id="rdb2" name="TR" value="BICYCLING" class="radio">BICICLETA 
+				<input type="radio" id="rdb3" name="TR" value="WALKING" class="radio">A PIE 
+				<input type="radio" id="rdb4" name="TR" value="TRANSIT" class="radio">TRANSPORTE PUBLICO
+			</div>
+
+			<button id="btnIr" type="button">Trazar Ruta</button>
+		</div>
 		<div id="map" class="col"></div>
 		<div id="pan" class="col"></div>
 			
@@ -100,13 +124,14 @@
 		    <a class="popup-cerrar" href="#">X</a>
    		</div>
 	</div>	
+	<div id="directions">
+			
+		</div>
+	</div>
 	<script src="static/js/jquery.js"></script><!--jquery siempre arriba-->
 	<script src="static/js/occidentalzone.js"></script>
 	<script src="static/js/register.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMk23sUF7guNp7I9m0ij3VVozhs6OKWXU&callback=init"
     async defer></script>
-
-
-	</div>
 </body>
 </html>

@@ -10,8 +10,32 @@ var lon =  -87.3017131;
 // var lat1 = 13.2916538;
 // var lon1 =-87.65194729999996;
 
+function success(pos)
+	{
+		document.getElementById('desde').value=value=pos.coords.latitude+ ','+pos.coords.longitude;
+		dirService = new google.maps.DirectionsService();
+		dirDisplay = new google.maps.DirectionsRenderer();
+
+		dirDisplay.setMap(map);
+	} 
+
+	function error(e){}
 
 function init(){
+
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(success, error);
+	}
+		$('#TipoMapa').fadeOut();
+    $('.CR').fadeOut();
+	$('#btnT').fadeOut();
+	$('#btnIr').fadeOut();
+	$('#desde').fadeOut();
+	$('#hasta').fadeOut();
+	$('#ca').fadeOut();
+	$('#caj').fadeOut();
+	$('#c').fadeOut();
+
 
 	var mapCoords = {lat: lat, lng: lon};
 

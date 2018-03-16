@@ -16,6 +16,69 @@
     text-decoration: none;
 	transition: 0.5s ease;
 	text-align: center;
+	display: inline-block;
+}
+#TipoMapa{
+	width: 150px;
+	border-radius: 1px;
+	margin-right: 50px;
+}
+.CR{
+	display: inline-block;
+}
+.controles{
+	padding-top: 10px;
+	border-top: 3px solid black;
+	border-right: 1px solid black;
+	margin-bottom: 20px;
+	font-family: "Dosis";
+	color:#05265D;
+}
+
+
+#ca{
+	display: inline-block;
+	width: 90px;
+}
+
+#caj{
+	display: inline-block;
+	width: 90px;
+}
+#c{
+	display: inline-block;
+	width: 90px;
+}
+#btnT{
+	display: inline-block;
+	margin-left: -1040px;
+	height: 35px;
+	border-radius: 10px;
+	margin-right: 20px;
+	background: #091D4A;
+	color:#fff;
+	font-size: 15px;
+	padding:4px;
+	font-family: "Dosis"
+
+}
+#TipoMapa{
+	display: inline-block;
+	margin-left: 10px;
+	height: 30px;
+}
+.radio{
+	display: inline-block;
+	margin-left: 25px;
+}
+#btnIr{
+	margin-left: 20px;
+	border-radius: 4px;
+	background: #091D4A;
+	color:#fff;
+	font-size: 15px;
+	padding:4px;
+	font-family: "Dosis"
 }
 
 #contenedor{

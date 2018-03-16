@@ -4,7 +4,28 @@ var lat = 15.7732601;
 var lon = -87.46535019999999;
 
 
+	function success(pos)
+	{
+		document.getElementById('desde').value=value=pos.coords.latitude+ ','+pos.coords.longitude;
+		
+	} 
+
+	function error(e){}
+
 function init(){
+	$('#TipoMapa').fadeOut();
+    $('.CR').fadeOut();
+	$('#btnT').fadeOut();
+	$('#btnIr').fadeOut();
+	$('#desde').fadeOut();
+	$('#hasta').fadeOut();
+	$('#ca').fadeOut();
+	$('#caj').fadeOut();
+	$('#c').fadeOut();
+
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(success, error);
+	}
 
 	var mapCoords = {lat: lat, lng: lon};
 

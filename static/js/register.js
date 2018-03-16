@@ -2,7 +2,12 @@
 	var map =null;
 	var panorama=null;
     var geocoder=null;
+    var nom=null;
+    var n=null;
+	var dirDisplay=null;
+	var dirService=null;
 
+	
    	var errCallback = function(){
 		alert("Error! Problemas de conexión con la base de datos!");
 	}
@@ -50,7 +55,7 @@
 	};
 	function listadoCiudades(successCallback){
 		db.transaction(function(transaction){
-			transaction.executeSql(("SELECT * FROM CiudadesV"),[],
+			transaction.executeSql(("SELECT* FROM CiudadesV  ORDER BY Id DESC LIMIT 5"),[],
 				function(transaction, results){successCallback(results);}, errCallback);
 			});
 	}; 
@@ -70,8 +75,7 @@ var list = function(results){
 		console.dir(results);
 }
 
-var i = 0;
-
+var i=0;
 var actualizarLugares = function(results){
 		console.dir(results);
 		if (results.rows.length==0){
@@ -86,7 +90,8 @@ var actualizarLugares = function(results){
 					<li><p id="lugares">${row.Name}</p></li>
 				</ul>
 				`;
-				$('#lugares').prepend( $(article).hide().fadeIn(1500));
+				$('#lugares').append( $(article).hide().fadeIn(1500));
+
 			});
 		}
 	};
@@ -101,16 +106,8 @@ var validar = function(results){
 		   alert("ERROR");
 		}
 }
-	
-var existente= function(results){
-	console.dir(results);
-	if(results.rows.length==0){
-		var texto=$('#busqueda').val();
-		guardarCiudadesV(nombre,function(){
-		});
-	}
-}	
 listadoUser(list);
+
 
 $('#RE').on('click', function(){
 	var name=$('#name').val();
@@ -145,37 +142,109 @@ $('#busqueda').on('keypress', function(e){
 	
 
 	if(tecla==13){
-		var mapNuevo = {
-			center: {lat:15.7732601, lng:-87.46535019999999},
-			mapTypeId:'roadmap',
-			zoom:12
-		};
-
-		map =new google.maps.Map(document.getElementById('map'),mapNuevo);
+		
+		
 		geocoder=new google.maps.Geocoder();
 		var texto=$(this).val();
-
 		
-		map.setStreetView(panorama);
-
 		geocoder.geocode({'address':texto}, function(result, status){
 				if(status=='OK'){
+					
+					$('#btnT').fadeIn();
+					
 					var nombre=result[0].formatted_address;
 
 					map.setCenter(result[0].geometry.location);
+					map.setZoom(13);
 					var geomarker= new google.maps.Marker({
 						map:map,
 						position:result[0].geometry.location,
 						title:result[0].formatted_address
 					});
 
+					document.getElementById('hasta').value=result[0].geometry.location.lat()+","+result[0].geometry.location.lng();
 					panorama.setPosition(result[0].geometry.location)
 					map.setStreetView(panorama);
-					CiudadDb(nombre,existente);
+					guardarCiudadesV(nombre,function(){});
+
+				}else{
+
+					
 				}
 			});
 	}
 });
 
+$('#btnT').on('click',function(){
 
+
+	$(this).fadeOut();
+	$('#TipoMapa').fadeIn();
+    $('.CR').fadeIn();
+    $('#btnIr').fadeIn();
+    $('#desde').fadeIn();
+    $('#hasta').fadeIn();
+    $('#ca').fadeIn();
+	$('#caj').fadeIn();
+	$('#c').fadeIn();
+	
+});
  
+ $('#TipoMapa').on('change', function(){
+		var mapType=$(this).val();
+
+		map.setMapTypeId(mapType)
+	});
+
+
+// function modos(){
+// 	$('.radio').on('change',function(){
+// 		 modo=$('.radio').val();
+// 	});
+// 	return  modo;
+// }
+
+$('#btnIr').on('click',function(){
+
+	var desde=$('#desde').val();
+	var hasta=$('#hasta').val();
+	// var modos=modos();
+	var modo=$('.radio').val();
+	
+	var request = {
+			origin: desde,
+			destination: hasta,
+			travelMode: modo, //WALKING, BICYCLING
+			provideRouteAlternatives:true
+		};
+
+		dirService = new google.maps.DirectionsService();
+		dirDisplay = new google.maps.DirectionsRenderer();
+
+		dirDisplay.setMap(map);
+		dirService.route(request,function(result, status){
+			if(status== 'OK')
+			{	
+				dirDisplay.setPanel($('#directions').get(0));
+				dirDisplay.setDirections(result);
+			}else if(status=='NOT_FOUND'){
+				alert('No se pudo determinar la ruta soicitada');
+			}
+		});
+});
+
+function modoviajes(){
+	var modoviaje;
+
+	if($('#rdb1').select()==true){
+		modoviaje=$('#rdb1').val();
+	}else if($('#rdb2').select()==true) {
+		modoviaje=$('#rdb2').val();
+	}else if($('#rdb3').select()==true) {
+		modoviaje=$('#rdb3').val();
+	}else{
+		modoviaje=$('#rdb4').val();
+	}
+
+	return modoviaje;
+}
